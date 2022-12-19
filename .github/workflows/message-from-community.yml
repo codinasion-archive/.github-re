@@ -1,0 +1,37 @@
+name: Message From Community
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  message_from_community:
+    if: github.event.label.name == 'message-approved' && github.repository == 'codinasion/.github'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.INVITE_TOKEN }}
+
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('yarn.lock') }}
+
+      - name: Yarn
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: |
+          yarn
+
+      - name: Submit message to backend
+        uses: ./action/
+        with:
+          SUBMIT_MESSAGE_TO_BACKEND: "true"
+          USERNAME: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          TOKEN: ${{ secrets.INVITE_TOKEN }}
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          BACKEND_ACCESS_TOKEN: ${{ secrets.BACKEND_ACCESS_TOKEN }}

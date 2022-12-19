@@ -1,0 +1,35 @@
+name: Invite to Organization
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  automate_invite:
+    if: github.event.label.name == 'welcome 🎉🎉🎉' && github.repository == 'codinasion/.github'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.INVITE_TOKEN }}
+
+      - name: Cache Node Modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('yarn.lock') }}
+
+      - name: Yarn
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: |
+          yarn
+
+      - name: Invite to Codinasion
+        uses: ./action/
+        with:
+          INVITE_USER: "true"
+          USERNAME: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          TOKEN: ${{ secrets.INVITE_TOKEN }}
