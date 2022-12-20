@@ -1,7 +1,7 @@
 name: Invitation to join Codinasion
 description: I would like to be part of this awesome community
 title: "Please invite me to Codinasion"
-labels: [welcome 🎉🎉🎉]
+labels: [welcome]
 body:
   - type: input
     id: name

@@ -31,7 +31,7 @@
     <td>
     <img align="left" src="https://raw.githubusercontent.com/codinasion/.github/master/assets/octocat.png" width="150">
     <h3>💖 Become a part of this commUnity 💖</h3>
-    <a href="https://github.com/codinasion/.github/issues/new?assignees=&labels=welcome+🎉🎉🎉&template=invitation.yml&title=Please+invite+me+to+Codinasion" alt="join_us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img.shields.io/badge/-JOIN%20US-green?style=for-the-badge&logo=github" width="150"></a>
+    <a href="https://github.com/codinasion/.github/issues/new?assignees=&labels=welcome&template=invitation.yml&title=Please+invite+me+to+Codinasion" alt="join_us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img.shields.io/badge/-JOIN%20US-green?style=for-the-badge&logo=github" width="150"></a>
     <img width="900" height="0">
     </td>
   </tr>
