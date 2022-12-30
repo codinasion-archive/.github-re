@@ -11,7 +11,7 @@ export default async function inviteUser(
 
   // send invitation to user
   await fetch(
-    `https://api.github.com/orgs/${OWNER}/teams/everyone/memberships/${USERNAME}`,
+    `https://api.github.com/orgs/${OWNER}/teams/members/memberships/${USERNAME}`,
     {
       method: "PUT",
       headers: {
@@ -19,7 +19,13 @@ export default async function inviteUser(
         Accept: "application/vnd.github.v3+json",
       },
     }
-  );
+  )
+    .then((res) => {
+      console.log(res.json());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   // comment on issue
   await fetch(
@@ -39,7 +45,9 @@ An invitation has been sent to you to join the organization. Please check your e
 `,
       }),
     }
-  );
+  ).catch((err) => {
+    console.log(err);
+  });
 
   // close issue
   await fetch(
@@ -54,7 +62,9 @@ An invitation has been sent to you to join the organization. Please check your e
         state: "closed",
       }),
     }
-  );
+  ).catch((err) => {
+    console.log(err);
+  });
 
   // end of inviteUser function
 }
