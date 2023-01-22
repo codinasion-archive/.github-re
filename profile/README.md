@@ -45,7 +45,7 @@
 
 <div align="center">
 
-[![Twitter](https://img.shields.io/twitter/follow/codinasion?color=success&label=Twitter&logo=twitter&logoColor=white&style=flat)](https://twitter.com/codinasion) [![Gmail](https://img.shields.io/badge/Gmail-codinasion-success?color=success&label=Gmail&logo=gmail&logoColor=white&style=flat)](mailto:codinasion@gmail.com) [![Join Discord](https://img.shields.io/discord/991922644511358997?label=Discord&logo=discord&logoColor=white)](https://discord.gg/PzNmxsrXTX)
+[![Twitter](https://img.shields.io/badge/Twitter-codinasion-success?color=success&label=Twitter&logo=twitter&logoColor=white&style=flat)](https://twitter.com/codinasion) [![Gmail](https://img.shields.io/badge/Gmail-codinasion-success?color=success&label=Gmail&logo=gmail&logoColor=white&style=flat)](mailto:codinasion@gmail.com) [![Join Discord](https://img.shields.io/discord/991922644511358997?label=Discord&logo=discord&logoColor=white)](https://discord.gg/PzNmxsrXTX)
 
 </div>
 
