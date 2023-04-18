@@ -9,27 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Invite on label
+        uses: vj-abigo/invite-on-label@v1.4
         with:
-          token: ${{ secrets.INVITE_TOKEN }}
+          organization: Codinasion
+          label: welcome
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          comment: |
+            Hey ${{ github.event.issue.user.login }}!
 
-      - name: Cache Node Modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('yarn.lock') }}
+            **An invitation has been sent to you to join the GitHub Organisation. Welcome to the community :tada:**
 
-      - name: Yarn
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: |
-          yarn
+            Don't forget after accepting to make it public so it appears on your GitHub profile for everyone else to see.
+            You can do this by finding your name in the GitHub organisation list and change the dropdown to public https://github.com/orgs/codinasion/people
 
-      - name: Invite to Codinasion
-        uses: ./action/
-        with:
-          INVITE_USER: "true"
-          USERNAME: ${{ github.event.issue.user.login }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          TOKEN: ${{ secrets.INVITE_TOKEN }}
+        env:
+          INVITE_TOKEN: ${{ secrets.INVITE_TOKEN }}
